@@ -1,0 +1,166 @@
+package com.example.sishi.biggergame;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+
+    public int num1;
+    public int num2;
+    public int points;
+
+    Button b1;
+    Button b2;
+    TextView t1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        Random rand = new Random();
+        num1 = rand.nextInt(10);
+        num2 = rand.nextInt(10);
+        String str = String.valueOf(num1);
+        String str2 = String.valueOf(num2);
+
+        b1 = (Button)findViewById(R.id.leftButton);
+        b2 = (Button)findViewById(R.id.rightButton);
+        t1 = (TextView)findViewById(R.id.pointsText);
+
+        b1.setText(str);
+        b2.setText(str2);
+
+    }
+
+
+    public void onClick(View view){
+
+        if(num1 == num2) {
+            Toast.makeText(this, "Two numbers are same", Toast.LENGTH_SHORT).show();
+            int points2 = points;
+            String str3 = String.valueOf(points2);
+            t1.setText("Points: " + str3);
+
+
+            Random rand = new Random();
+            num1 = rand.nextInt(10);
+            num2 = rand.nextInt(10);
+            String str = String.valueOf(num1);
+            String str2 = String.valueOf(num2);
+
+            b1 = (Button)findViewById(R.id.leftButton);
+            b2 = (Button)findViewById(R.id.rightButton);
+
+            b1.setText(str);
+            b2.setText(str2);
+        }
+
+        if(num1 > num2){
+            Toast.makeText(this,"Congratulations !! You choose the Biggger Number",Toast.LENGTH_SHORT).show();
+            points++;
+            String str3 = String.valueOf(points);
+            t1.setText("Points: " + str3);
+
+            Random rand = new Random();
+            num1 = rand.nextInt(10);
+            num2 = rand.nextInt(10);
+            String str = String.valueOf(num1);
+            String str2 = String.valueOf(num2);
+
+            b1 = (Button)findViewById(R.id.leftButton);
+            b2 = (Button)findViewById(R.id.rightButton);
+
+            b1.setText(str);
+            b2.setText(str2);
+        }
+
+        else{
+            Toast.makeText(this,"Opps !! You choose the Smaller Number",Toast.LENGTH_SHORT).show();
+            points--;
+            String str3 = String.valueOf(points);
+            t1.setText("Points: " + str3);
+
+            Random rand = new Random();
+            num1 = rand.nextInt(10);
+            num2 = rand.nextInt(10);
+            String str = String.valueOf(num1);
+            String str2 = String.valueOf(num2);
+
+            b1 = (Button)findViewById(R.id.leftButton);
+            b2 = (Button)findViewById(R.id.rightButton);
+
+            b1.setText(str);
+            b2.setText(str2);
+        }
+    }
+
+    public void onClick2(View view){
+
+
+        if(num2 == num1) {
+            Toast.makeText(this, "Two numbers are same", Toast.LENGTH_SHORT).show();
+            int points2 = points;
+            String str3 = String.valueOf(points2);
+            t1.setText("Points: " + str3);
+
+
+            Random rand = new Random();
+            num1 = rand.nextInt(10);
+            num2 = rand.nextInt(10);
+            String str = String.valueOf(num1);
+            String str2 = String.valueOf(num2);
+
+            b1 = (Button)findViewById(R.id.leftButton);
+            b2 = (Button)findViewById(R.id.rightButton);
+
+            b1.setText(str);
+            b2.setText(str2);
+        }
+
+        if(num2 > num1){
+            Toast.makeText(this,"Congratulations !! You choose the Biggger Number",Toast.LENGTH_SHORT).show();
+            points++;
+            String str3 = String.valueOf(points);
+            t1.setText("Points: " + str3);
+
+            Random rand = new Random();
+            num1 = rand.nextInt(10);
+            num2 = rand.nextInt(10);
+            String str = String.valueOf(num1);
+            String str2 = String.valueOf(num2);
+
+            b1 = (Button)findViewById(R.id.leftButton);
+            b2 = (Button)findViewById(R.id.rightButton);
+
+            b1.setText(str);
+            b2.setText(str2);
+        }
+
+        else{
+            Toast.makeText(this,"Opps !! You choose the Smaller Number",Toast.LENGTH_SHORT).show();
+            points--;
+            String str3 = String.valueOf(points);
+            t1.setText("Points: " + str3);
+
+            Random rand = new Random();
+            num1 = rand.nextInt(10);
+            num2 = rand.nextInt(10);
+            String str = String.valueOf(num1);
+            String str2 = String.valueOf(num2);
+
+            b1 = (Button)findViewById(R.id.leftButton);
+            b2 = (Button)findViewById(R.id.rightButton);
+
+            b1.setText(str);
+            b2.setText(str2);
+        }
+    }
+}
